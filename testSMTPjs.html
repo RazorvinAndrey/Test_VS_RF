@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script type="text/javascript">
+
+		function sendEmail(em, com) {
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username: "profclinGet@outlook.com",
+				Password: "0739133EDC557CDDB133FE5308CB7799531F",
+				To: em,
+				From: "profclinGet@outlook.com",
+				Subject: "YOUR ORDER",
+				Body: com
+			}).then(
+				message => console.log(message)
+			);
+		}
+
+		const formElement = document.getElementById('form1'); // извлекаем элемент формы
+		if (formElement) {
+			formElement.addEventListener('submit', (e) => {
+				e.preventDefault();
+				const formData = new FormData(formElement); // создаём объект FormData, передаём в него элемент формы
+				// теперь можно извлечь данные
+				const email = formData.get('email'); // 'John'
+				const comment = formData.get('comment'); // 'Smith'
+				sendEmail(email, comment)
+			});
+		}
+
+
+	</script>
+</head>
+
+<body>
+	<form id="form1">
+		<input type="email" name="email" />
+		<input type="text" name="comment" />
+		<input type="submit" />
+	</form>
+</body>
+
+</html>
