@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Prof Clin</title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="Cleaning Company Website Template" name="keywords">
 	<meta content="Cleaning Company Website Template" name="description">
@@ -83,19 +84,19 @@
 					<div class="col-md-5">
 						<div class="form">
 							<h3>Сделать заказ</h3>
-							<form>
-								<input class="form-control" type="text" placeholder="Имя">
-								<input class="form-control" type="text" placeholder="Номер телефона">
+							<form action="#" method="post" id="form">
+								<input name="name" class="form-control" type="text" placeholder="Имя">
+								<input name="tel" class="form-control" type="text" placeholder="Номер телефона">
 								<div class="control-group">
-									<select class="custom-select">
+									<select name="ubr" class="custom-select">
 										<option selected>Выберите вид уборки</option>
 										<option value="1">Уборка дома</option>
 										<option value="2">Уборка квартиры</option>
 										<option value="3">Уборка офиса</option>
 									</select>
 								</div>
-								<textarea class="form-control" placeholder="Комментарий"></textarea>
-								<button class="btn btn-block">Сделать заказ</button>
+								<textarea name="com" class="form-control" placeholder="Комментарий"></textarea>
+								<button type="submit" class="btn btn-block">Сделать заказ</button>
 							</form>
 						</div>
 					</div>
@@ -104,94 +105,62 @@
 		</div>
 		<!-- Header End -->
 
-
-		<!-- About Start -->
-		<!-- <div class="about">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-5 col-md-6">
-						<div class="about-img">
-							<img src="img/about.jpg" alt="Image">
-						</div>
-					</div>
-					<div class="col-lg-7 col-md-6">
-						<div class="about-text">
-							<h2><span>10</span> Years Experience</h2>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis
-								ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
-							</p>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis
-								ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
-								Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam
-								interdum at lacus non blandit.
-							</p>
-							<a class="btn" href="">Learn More</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!-- About End -->
-
-
 		<!-- Service Start -->
-		<!-- <div class="service">
+		<div class="service">
 			<div class="container">
 				<div class="section-header">
-					<p>Our Services</p>
-					<h2>Provide Services Worldwide</h2>
+					<p>Наш сервис</p>
+					<h2>Полный спект услуг</h2>
 				</div>
 				<div class="row">
 					<div class="col-lg-3 col-md-6">
 						<div class="service-item">
 							<img src="img/service-1.jpg" alt="Service">
-							<h3>Flour Cleaning</h3>
+							<h3>Генеральная уборка</h3>
 							<p>
 								Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
 							</p>
-							<a class="btn" href="">Learn More</a>
+							<a class="btn" href="service.html">Подробнее</a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="service-item">
 							<img src="img/service-2.jpg" alt="Service">
-							<h3>Glass Cleaning</h3>
+							<h3>Уборка ванной</h3>
 							<p>
 								Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
 							</p>
-							<a class="btn" href="">Learn More</a>
+							<a class="btn" href="service.html">Подробнее</a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="service-item">
 							<img src="img/service-3.jpg" alt="Service">
-							<h3>Carpet Cleaning</h3>
+							<h3>Сложная уборка</h3>
 							<p>
 								Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
 							</p>
-							<a class="btn" href="">Learn More</a>
+							<a class="btn" href="service.html">Подробнее</a>
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="service-item">
 							<img src="img/service-4.jpg" alt="Service">
-							<h3>Toilet Cleaning</h3>
+							<h3>Уборка кухни</h3>
 							<p>
 								Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
 							</p>
-							<a class="btn" href="">Learn More</a>
+							<a class="btn" href="service.html">Подробнееe</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- Service End -->
 
 
 		<!-- Feature Start -->
-		<!-- <div class="feature">
+		<div class="feature">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-5">
@@ -247,7 +216,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- Feature End -->
 
 
@@ -333,99 +302,15 @@
 		<!-- Team End -->
 
 
-		<!-- FAQs Start -->
-		<!-- <div class="faqs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-5">
-						<div class="section-header left">
-							<p>You Might Ask</p>
-							<h2>Frequently Asked Questions</h2>
-						</div>
-						<img src="img/faqs.jpg" alt="Image">
-					</div>
-					<div class="col-md-7">
-						<div id="accordion">
-							<div class="card">
-								<div class="card-header">
-									<a class="card-link collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
-										<span>1</span> Lorem ipsum dolor sit amet?
-									</a>
-								</div>
-								<div id="collapseOne" class="collapse show" data-parent="#accordion">
-									<div class="card-body">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
-										facilisis ornare velit non.
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-header">
-									<a class="card-link" data-toggle="collapse" href="#collapseTwo">
-										<span>2</span> Lorem ipsum dolor sit amet?
-									</a>
-								</div>
-								<div id="collapseTwo" class="collapse" data-parent="#accordion">
-									<div class="card-body">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
-										facilisis ornare velit non.
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-header">
-									<a class="card-link" data-toggle="collapse" href="#collapseThree">
-										<span>3</span> Lorem ipsum dolor sit amet?
-									</a>
-								</div>
-								<div id="collapseThree" class="collapse" data-parent="#accordion">
-									<div class="card-body">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
-										facilisis ornare velit non.
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-header">
-									<a class="card-link" data-toggle="collapse" href="#collapseFour">
-										<span>4</span> Lorem ipsum dolor sit amet?
-									</a>
-								</div>
-								<div id="collapseFour" class="collapse" data-parent="#accordion">
-									<div class="card-body">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
-										facilisis ornare velit non.
-									</div>
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-header">
-									<a class="card-link" data-toggle="collapse" href="#collapseFour">
-										<span>5</span> Lorem ipsum dolor sit amet?
-									</a>
-								</div>
-								<div id="collapseFour" class="collapse" data-parent="#accordion">
-									<div class="card-body">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur
-										facilisis ornare velit non.
-									</div>
-								</div>
-							</div>
-						</div>
-						<a class="btn" href="">Ask more</a>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!-- FAQs End -->
+
 
 
 		<!-- Pricing Plan Start -->
-		<!-- <div class="price">
+		<div class="price">
 			<div class="container">
 				<div class="section-header">
-					<p>Pricing Plan</p>
-					<h2>No Extra Hidden Charges</h2>
+					<p>Наш прайс</p>
+					<h2>Выгодные предложения</h2>
 				</div>
 				<div class="row">
 					<div class="col-md-4">
@@ -435,26 +320,26 @@
 									<i class="fa fa-home"></i>
 								</div>
 								<div class="price-title">
-									<h2>Standard</h2>
+									<h2>Уборка дома</h2>
 								</div>
 								<div class="price-pricing">
-									<h2><small>$</small>99</h2>
+									<h2><small></small>5000руб.</h2>
 								</div>
 							</div>
 							<div class="price-body">
 								<div class="price-des">
 									<ul>
-										<li>3 Bedrooms cleaning</li>
-										<li>2 Bathrooms cleaning</li>
-										<li>1 Living room Cleaning</li>
-										<li>Vacuum Cleaning</li>
-										<li>Within 6 Hours</li>
+										<li>3 комнаты</li>
+										<li>2 ванные</li>
+										<li>1 кухня</li>
+										<li>вакумная мойка</li>
+										<li>6 часовая уборка</li>
 									</ul>
 								</div>
 							</div>
 							<div class="price-footer">
 								<div class="price-action">
-									<a href=""><i class="fa fa-shopping-cart"></i>Book Now</a>
+									<a href=""><i class="fa fa-shopping-cart"></i>Заказать</a>
 								</div>
 							</div>
 						</div>
@@ -523,12 +408,12 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- Pricing Plan End -->
 
 
 		<!-- Newsletter Start -->
-		<!-- <div class="newsletter">
+		<div class="newsletter">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-8">
@@ -545,12 +430,12 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- Newsletter End -->
 
 
 		<!-- Testimonial Start -->
-		<!-- <div class="testimonial">
+		<div class="testimonial">
 			<div class="container">
 				<div class="section-header">
 					<p>Client Review</p>
@@ -607,12 +492,12 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- Testimonial End -->
 
 
 		<!-- Call to Action Start -->
-		<!-- <div class="call-to-action">
+		<div class="call-to-action">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-9">
@@ -626,12 +511,12 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- Call to Action End -->
 
 
 		<!-- Blog Start -->
-		<!-- <div class="blog">
+		<div class="blog">
 			<div class="container">
 				<div class="section-header">
 					<p>Latest From Blog</p>
@@ -691,7 +576,7 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 		<!-- Blog End -->
 
 
@@ -751,6 +636,39 @@
 	</div>
 
 	<!-- JavaScript Libraries -->
+	<script type="text/javascript">
+
+		function sendEmail(data) {
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username: "profclinGet@outlook.com",
+				Password: "0739133EDC557CDDB133FE5308CB7799531F",
+				To: "razorvin.andrey2000@gmail.com",
+				From: "profclinGet@outlook.com",
+				Subject: "Новый заказ",
+				Body: data
+			}).then(
+				message => console.log(message)
+			);
+		}
+		function getFormValue(event) {
+			event.preventDefault();
+			const name = form.querySelector('[name="name"]'), //получаем поле name
+				tel = form.querySelector('[name="tel"]'), //получаем поле email
+				com = form.querySelector('[name="com"]'),
+				ubr = form.querySelector('[name="ubr"]')
+			const data = {
+				name: name.value,
+				tel: tel.value,
+				com: com.value,
+				ubr: ubr.value
+			};
+			console.log(data);
+			sendEmail(data)
+		}
+		const form = document.getElementById('form');
+		form.addEventListener('submit', getFormValue);
+	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<script src="lib/easing/easing.min.js"></script>
