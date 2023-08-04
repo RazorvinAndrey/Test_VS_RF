@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Prof Clin</title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="Cleaning Company Website Template" name="keywords">
 	<meta content="Cleaning Company Website Template" name="description">
@@ -82,19 +83,19 @@
 					<div class="col-md-5">
 						<div class="form">
 							<h3>Сделать заказ</h3>
-							<form>
-								<input class="form-control" type="text" placeholder="Имя">
-								<input class="form-control" type="text" placeholder="Номер телефона">
+							<form action="#" method="post" id="form">
+								<input name="name" class="form-control" type="text" placeholder="Имя">
+								<input name="tel" class="form-control" type="text" placeholder="Номер телефона">
 								<div class="control-group">
-									<select class="custom-select">
+									<select name="ubr" class="custom-select">
 										<option selected>Выберите вид уборки</option>
 										<option value="1">Уборка дома</option>
 										<option value="2">Уборка квартиры</option>
 										<option value="3">Уборка офиса</option>
 									</select>
 								</div>
-								<textarea class="form-control" placeholder="Комментарий"></textarea>
-								<button class="btn btn-block">Сделать заказ</button>
+								<textarea name="com" class="form-control" placeholder="Комментарий"></textarea>
+								<button type="submit" class="btn btn-block">Сделать заказ</button>
 							</form>
 						</div>
 					</div>
@@ -750,6 +751,39 @@
 	</div>
 
 	<!-- JavaScript Libraries -->
+	<script type="text/javascript">
+
+		function sendEmail(data) {
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username: "profclinGet@outlook.com",
+				Password: "0739133EDC557CDDB133FE5308CB7799531F",
+				To: "razorvin.andrey2000@gmail.com",
+				From: "profclinGet@outlook.com",
+				Subject: "Новый заказ",
+				Body: data
+			}).then(
+				message => console.log(message)
+			);
+		}
+		function getFormValue(event) {
+			event.preventDefault();
+			const name = form.querySelector('[name="name"]'), //получаем поле name
+				tel = form.querySelector('[name="tel"]'), //получаем поле email
+				com = form.querySelector('[name="com"]'),
+				ubr = form.querySelector('[name="ubr"]')
+			const data = {
+				name: name.value,
+				tel: tel.value,
+				com: com.value,
+				ubr: ubr.value
+			};
+			console.log(data);
+			sendEmail(data)
+		}
+		const form = document.getElementById('form');
+		form.addEventListener('submit', getFormValue);
+	</script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<script src="lib/easing/easing.min.js"></script>
