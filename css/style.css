@@ -1742,6 +1742,10 @@ a:focus {
 	font-weight: 300;
 }
 
+.footer .footline{
+	justify-content: center;
+}
+
 .footer .footer-contact,
 .footer .footer-link,
 .footer .footer-form {
