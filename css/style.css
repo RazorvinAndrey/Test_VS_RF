@@ -2021,8 +2021,6 @@ h6 {
 	text-align: center;
 }
 
-.heading-desc {}
-
 .calc-section {
 	padding: 40px 50px;
 	background-color: #f4f8fa;
@@ -2197,8 +2195,6 @@ h6 {
 	flex-direction: start;
 	align-items: center;
 }
-
-.rooms-label {}
 
 .rooms-radio-real {
 	opacity: 0;
