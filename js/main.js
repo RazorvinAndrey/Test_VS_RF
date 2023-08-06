@@ -85,18 +85,19 @@
 const squareInput = document.querySelector('#square-input');
 const squareRange = document.querySelector('#square-range');
 const inputs = document.querySelectorAll('input');
+const win_input = document.querySelector('#win-input');
 
 // Радиокнопки
 const radioType = document.querySelectorAll('input[name="type"]');
-const radioBuilding = document.querySelectorAll('input[name="building"]');
-const radioRooms = document.querySelectorAll('input[name="rooms"]');
+const kuhni_kol = document.querySelectorAll('input[name="kuhni_kol"]');
+const vannie_kol = document.querySelectorAll('input[name="vannie_kol"]');
 
 // Чекбоксы
-const ceilings = document.querySelector('input[name="ceiling"]');
-const walls = document.querySelector('input[name="walls"]');
-const floor = document.querySelector('input[name="floor"]');
+const vannie = document.querySelector('input[name="vannie"]');
+const kuhni = document.querySelector('input[name="kuhni"]');
 
-const basePrice = 6000;
+const ceilings = document.querySelector('input[name="ceiling"]');
+
 const totalPriceElement = document.querySelector('#total-price');
 
 // Связка range c тектовым полем
@@ -111,37 +112,47 @@ squareInput.addEventListener('input', function () {
 });
 
 function calculate() {
-	let totalPrice = basePrice * parseInt(squareInput.value); // 300 000
+	let totalPrice = 0;
 
 	for (const radio of radioType) {
 		if (radio.checked) {
-			totalPrice = totalPrice * parseFloat(radio.value); // 300 000 * 1.2
+			totalPrice = parseInt(squareInput.value) * parseFloat(radio.value); // 300 000 * 1.2
+			if (radio.value != 90) {
+				vannie.disabled = true;
+				kuhni.disabled = true;
+				kuhni_kol.disabled = true;
+				vannie_kol.disabled = true;
+			} else {
+				vannie.disabled = false;
+				kuhni.disabled = false;
+				kuhni_kol.disabled = false;
+				vannie_kol.disabled = false;
+			}
 		}
 	}
 
-	for (const radio of radioBuilding) {
-		if (radio.checked) {
-			totalPrice = totalPrice * parseFloat(radio.value); // 360 000 * 1.1 = 390 000
+	if (vannie.checked) {
+		for (const radio of vannie_kol) {
+			if (radio.checked) {
+				totalPrice = totalPrice + 2900 * parseFloat(radio.value);
+			}
 		}
 	}
 
-	for (const radio of radioRooms) {
-		if (radio.checked) {
-			totalPrice = totalPrice * parseFloat(radio.value); // 390 000 * 0.8 = 350 000
+	if (kuhni.checked) {
+		for (const radio of kuhni_kol) {
+			if (radio.checked) {
+				totalPrice = totalPrice + 4900 * parseFloat(radio.value);
+			}
 		}
 	}
 
-	if (ceilings.checked) {
-		totalPrice = totalPrice + parseFloat(ceilings.value) * parseInt(squareInput.value);
+	if (win_input.value > 0) {
+		totalPrice = totalPrice + win_input.value * 300
 	}
-
-	if (walls.checked) {
-		totalPrice = totalPrice * parseFloat(walls.value); // ---
-	}
-
-	if (floor.checked) {
-		totalPrice = totalPrice * parseFloat(floor.value); // ---
-	}
+	// if (floor.checked) {
+	// 	totalPrice = totalPrice * parseFloat(floor.value); // ---
+	// }
 
 	const formatter = new Intl.NumberFormat('ru');
 	totalPriceElement.innerText = formatter.format(totalPrice);
