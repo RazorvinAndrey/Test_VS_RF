@@ -361,6 +361,32 @@ a:focus {
 	color: #2d2c2c;
 }
 
+.btn_block {
+	display: flex;
+	align-items: center;
+}
+
+.btn_zacaz {
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	padding: 10px 35px;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #fff;
+	border: none;
+	letter-spacing: 1px;
+	border-radius: 5px;
+	background: #00539C;
+	transition: .3s;
+}
+
+.btn_zacaz:hover {
+	background: #FFD662;
+	color: #2d2c2c;
+}
+
 @media (max-width: 767.98px) {
 	.header .hero .form {
 		margin-top: 45px;
@@ -488,6 +514,7 @@ a:focus {
 }
 
 .about .about-img img {
+	margin-top: 38%;
 	width: 100%;
 	border-radius: 5px;
 }
