@@ -530,7 +530,7 @@
 				com = form.querySelector('[name="com"]'),
 				price = totalPriceElement.innerText,
 				kv_metr = form.querySelector('[name="kv_metr"]'),
-				type = form.querySelector('[name="type"]'),
+				radioType = document.querySelectorAll('input[name="type"]'),
 				kuhni = form.querySelector('[name="kuhni"]'),
 				kuhni_kol = document.querySelectorAll('input[name="kuhni_kol"]'),
 				vannie = form.querySelector('[name="vannie"]'),
@@ -555,15 +555,28 @@
 			} else {
 				va_kold = 0;
 			}
-			console.log(ku_kold)
-			console.log(va_kold)
+			let tip = "";
+			for (const radio of radioType) {
+				if (radio.checked) {
+					if (radio.value == 90) {
+						tip = "Генеральная";
+					} else if (radio.value == 150) {
+						tip = "После ремента";
+					} else if (radio.value == 200) {
+						tip = "Сложная";
+					} else if (radio.value == 50) {
+						tip = "Поверхностная";
+					}
+				}
+			}
+			console.log(tip)
 			const data = {
 				"Имя": name.value,
 				"Номер телефона": tel.value,
 				"Комментарий к заказу": com.value,
 				"Расчётная цена": price,
 				"Метраж": kv_metr.value,
-				"Тип уборки": type.value,
+				"Тип уборки": tip,
 				"Кухни": kuhni.checked ? "Да" : "Нет",
 				"Колличество кухонь": ku_kold,
 				"Ванные": vannie.checked ? "Да" : "Нет",
