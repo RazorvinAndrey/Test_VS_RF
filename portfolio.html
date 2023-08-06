@@ -118,82 +118,116 @@
 					<div class="calc-section">
 						<h4 class="checkbox-wrapper title-bold section-title">Тип уборки</h4>
 						<label class="radio-wrapper" data-name="mobile">
-							<input type="radio" class="radio" name="type" value="1" />
-							<div class="title-lite">Косметический</div>
-						</label>
-						<label class="radio-wrapper" data-name="mobile">
-							<input type="radio" class="radio" name="type" value="1.3" checked />
-							<div class="title-lite">
-								Капитальный
-								<span class="note">+30% к стоимости</span>
+							<input type="radio" class="radio" name="type" value="90" checked />
+							<div class="title-lite">Генеральная
+								<span class="note">90 рублей за м²</span>
 							</div>
 						</label>
 						<label class="radio-wrapper" data-name="mobile">
-							<input type="radio" class="radio" name="type" value="1.5" />
+							<input type="radio" class="radio" name="type" value="150" />
 							<div class="title-lite">
-								Под ключ
-								<span class="note">+50% к стоимости</span>
+								После ремонта
+								<span class="note">150 рублей за м²</span>
+							</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="200" />
+							<div class="title-lite">
+								Сложная
+								<span class="note">200 рублей за м²</span>
+							</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="50" />
+							<div class="title-lite">
+								Поверхностная
+								<span class="note">50 рублей за м²</span>
 							</div>
 						</label>
 					</div>
 					<!-- // Мобильная адаптивность -->
-
-					<!-- Мобильная адаптивность -->
 					<div class="calc-section">
-						<label class="checkbox-wrapper title-bold section-title"> Тип дома </label>
+						<label class="checkbox-wrapper title-bold section-title">Кухни и ванные</label>
 						<label class="radio-wrapper">
-							<input type="radio" class="radio" name="building" value="1" checked />
-							<div class="title-lite">Новострой</div>
+							<input type="checkbox" class="radio" name="kuhni" value="4900" />
+							<div class="title-lite">
+								<div class="calc-section">
+									<label class="checkbox-wrapper title-bold section-title"> Кухни </label>
+									<span class="note">4900 руб.</span>
+									<div class="rooms-wrapper">
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="kuhni_kol" value="1" />
+											<span class="rooms-radio-fake">1</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="kuhni_kol" value="2" />
+											<span class="rooms-radio-fake">2</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="kuhni_kol" value="3" />
+											<span class="rooms-radio-fake">3</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="kuhni_kol" value="4" />
+											<span class="rooms-radio-fake">4</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="kuhni_kol" value="5" />
+											<span class="rooms-radio-fake">5</span>
+										</label>
+									</div>
+								</div>
+							</div>
 						</label>
 						<label class="radio-wrapper">
-							<input type="radio" class="radio" name="building" value="1.1" />
+							<input type="checkbox" class="radio" name="vannie" value="2900" />
 							<div class="title-lite">
-								Вторичка
-								<span class="note">+10% к стоимости</span>
+								<div class="calc-section">
+									<label class="checkbox-wrapper title-bold section-title"> Ванные </label>
+									<span class="note">2900 руб.</span>
+									<div class="rooms-wrapper">
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="vannie_kol" value="1" />
+											<span class="rooms-radio-fake">1</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="vannie_kol" value="2" />
+											<span class="rooms-radio-fake">2</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="vannie_kol" value="3" />
+											<span class="rooms-radio-fake">3</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="vannie_kol" value="4" />
+											<span class="rooms-radio-fake">4</span>
+										</label>
+
+										<label class="rooms-label">
+											<input class="rooms-radio-real" type="radio" name="vannie_kol" value="5" />
+											<span class="rooms-radio-fake">5</span>
+										</label>
+									</div>
+								</div>
 							</div>
 						</label>
 					</div>
-					<!-- // Мобильная адаптивность -->
-
-					<!-- Количество комнат -->
 					<div class="calc-section">
-						<label class="checkbox-wrapper title-bold section-title"> Количество комнат </label>
-						<div class="rooms-wrapper">
-							<label class="rooms-label">
-								<input class="rooms-radio-real" type="radio" name="rooms" value="0.8" />
-								<span class="rooms-radio-fake">C</span>
-							</label>
-
-							<label class="rooms-label">
-								<input class="rooms-radio-real" type="radio" name="rooms" value="1" checked />
-								<span class="rooms-radio-fake">1</span>
-							</label>
-
-							<label class="rooms-label">
-								<input class="rooms-radio-real" type="radio" name="rooms" value="1" />
-								<span class="rooms-radio-fake">2</span>
-							</label>
-
-							<label class="rooms-label">
-								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
-								<span class="rooms-radio-fake">3</span>
-							</label>
-
-							<label class="rooms-label">
-								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
-								<span class="rooms-radio-fake">4</span>
-							</label>
-
-							<label class="rooms-label">
-								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
-								<span class="rooms-radio-fake">5</span>
-							</label>
-						</div>
+						<label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
+							<span class="title__inline">Количество окон:</span>
+							<input type="number" min="0" max="40" value="0" id="win-input" class="title__inline input-short" />
+							<span class="title__inline"> по 300 руб. за окно</span>
+						</label>
 					</div>
-					<!-- // Количество комнат -->
-
 					<!-- Дополнительные опции -->
-					<div class="calc-section">
+					<!-- <div class="calc-section">
 						<label class="checkbox-wrapper title-bold section-title"> Дополнительные опции </label>
 						<label class="radio-wrapper">
 							<input type="checkbox" class="radio" name="ceiling" value="900" />
@@ -216,7 +250,7 @@
 								<span class="note">+10% к стоимости</span>
 							</div>
 						</label>
-					</div>
+					</div> -->
 					<!-- // Дополнительные опции -->
 					<!-- Стоимость ремонта -->
 					<div class="calc-price">
@@ -495,24 +529,46 @@
 				tel = form.querySelector('[name="tel"]'), //получаем поле email
 				com = form.querySelector('[name="com"]'),
 				price = totalPriceElement.innerText,
-				ceiling = form.querySelector('[name="ceiling"]'),
-				walls = form.querySelector('[name="walls"]'),
-				floor = form.querySelector('[name="floor"]'),
-				rooms = form.querySelector('[name="rooms"]'),
-				building = form.querySelector('[name="building"]'),
 				kv_metr = form.querySelector('[name="kv_metr"]'),
-				type = form.querySelector('[name="type"]')
+				type = form.querySelector('[name="type"]'),
+				kuhni = form.querySelector('[name="kuhni"]'),
+				kuhni_kol = document.querySelectorAll('input[name="kuhni_kol"]'),
+				vannie = form.querySelector('[name="vannie"]'),
+				vannie_kol = document.querySelectorAll('input[name="vannie_kol"]'),
+				win_input = document.querySelector('#win-input')
+
+			if (kuhni.checked) {
+				for (const radio of kuhni_kol) {
+					if (radio.checked) {
+						ku_kold = parseInt(radio.value);
+					}
+				}
+			} else {
+				ku_kold = 0;
+			}
+			if (vannie.checked) {
+				for (const radio of vannie_kol) {
+					if (radio.checked) {
+						va_kold = parseInt(radio.value);
+					}
+				}
+			} else {
+				va_kold = 0;
+			}
+			console.log(ku_kold)
+			console.log(va_kold)
 			const data = {
 				name: name.value,
 				tel: tel.value,
 				com: com.value,
 				price: price,
-				ceiling: ceiling.value,
-				walls: walls.value,
-				floor: floor.value,
-				building: building.value,
 				kv_metr: kv_metr.value,
-				type: type.value
+				type: type.value,
+				kuhni: kuhni.checked,
+				kuhni_kol: ku_kold,
+				vannie: vannie.checked,
+				vannie_kol: va_kold,
+				win_input: win_input.value
 			};
 			console.log(data);
 			sendEmail(data)
