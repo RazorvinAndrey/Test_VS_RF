@@ -559,8 +559,8 @@
 			console.log(va_kold)
 			const data = {
 				name: name.value,
-				tel: tel.value,
-				com: com.value,
+				telefon: tel.value,
+				commentarei: com.value,
 				price: price,
 				kv_metr: kv_metr.value,
 				type: type.value,
@@ -573,6 +573,9 @@
 			console.log(data);
 			sendEmail(data)
 			event.target.reset();
+
+			const formatter = new Intl.NumberFormat('ru');
+			totalPriceElement.innerText = formatter.format(4500);
 		}
 		const form = document.getElementById('form');
 		form.addEventListener('submit', getFormValue);
