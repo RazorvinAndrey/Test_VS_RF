@@ -558,24 +558,27 @@
 			console.log(ku_kold)
 			console.log(va_kold)
 			const data = {
-				name: name.value,
-				telefon: tel.value,
-				commentarei: com.value,
-				price: price,
-				kv_metr: kv_metr.value,
-				type: type.value,
-				kuhni: kuhni.checked,
-				kuhni_kol: ku_kold,
-				vannie: vannie.checked,
-				vannie_kol: va_kold,
-				win_input: win_input.value
+				"Имя": name.value,
+				"Номер телефона": tel.value,
+				"Комментарий к заказу": com.value,
+				"Расчётная цена": price,
+				"Метраж": kv_metr.value,
+				"Тип уборки": type.value,
+				"Кухни": kuhni.checked ? "Да" : "Нет",
+				"Колличество кухонь": ku_kold,
+				"Ванные": vannie.checked ? "Да" : "Нет",
+				"Колличество ванных": va_kold,
+				"Колличество окон": win_input.value
 			};
 			console.log(data);
-			sendEmail(data)
+			sendEmail(data);
 			event.target.reset();
-
-			const formatter = new Intl.NumberFormat('ru');
-			totalPriceElement.innerText = formatter.format(4500);
+			setTimeout(codingCourse, 1000);
+			// определение функции
+			function codingCourse() {
+				console.log("Отправка");
+			}
+			location.reload();
 		}
 		const form = document.getElementById('form');
 		form.addEventListener('submit', getFormValue);

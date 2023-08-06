@@ -90,9 +90,10 @@
 								<div class="control-group">
 									<select name="ubr" class="custom-select">
 										<option selected>Выберите вид уборки</option>
-										<option value="1">Уборка дома</option>
-										<option value="2">Уборка квартиры</option>
-										<option value="3">Уборка офиса</option>
+										<option value="Генеральная">Генеральная</option>
+										<option value="После ремонта">После ремонта</option>
+										<option value="Сложная">Сложная</option>
+										<option value="Поверхностная">Поверхностная</option>
 									</select>
 								</div>
 								<textarea name="com" class="form-control" placeholder="Комментарий"></textarea>
@@ -666,10 +667,10 @@
 				com = form.querySelector('[name="com"]'),
 				ubr = form.querySelector('[name="ubr"]')
 			const data = {
-				name: name.value,
-				tel: tel.value,
-				com: com.value,
-				ubr: ubr.value
+				"Имя": name.value,
+				"Номер телефона": tel.value,
+				"Комментарий": com.value,
+				"Тип уборки": ubr.value
 			};
 			console.log(data);
 			sendEmail(data)
