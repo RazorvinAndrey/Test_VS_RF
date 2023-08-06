@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Prof Clin - Заказ</title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="Cleaning Company Website Template" name="keywords">
 	<meta content="Cleaning Company Website Template" name="description">
@@ -93,6 +94,157 @@
 			</div>
 		</div>
 		<!-- Page Header End -->
+		<main class="calc-wrapper">
+			<div class="container">
+				<form action="#" method="post" id="form">
+					<div class="heading">
+						<h1 class="heading-title">Калькулятор стоимости уборки</h1>
+						<p class="heading-desc">Базовая цена: 1 м² = 90 рублей</p>
+					</div>
+
+					<!-- Площадь -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title .section-title--vertical-center">
+							<span class="title__inline">Площадь квартиры:</span>
+							<input type="number" min="0" max="200" value="50" id="square-input" class="title__inline input-short" />
+							<span class="title__inline">м²</span>
+						</label>
+						<input name="kv_metr" type="range" id="square-range" class="range-input" min="0" max="200" value="50"
+							step="1" />
+					</div>
+					<!-- // Площадь -->
+
+					<!-- Мобильная адаптивность -->
+					<div class="calc-section">
+						<h4 class="checkbox-wrapper title-bold section-title">Тип уборки</h4>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="1" />
+							<div class="title-lite">Косметический</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="1.3" checked />
+							<div class="title-lite">
+								Капитальный
+								<span class="note">+30% к стоимости</span>
+							</div>
+						</label>
+						<label class="radio-wrapper" data-name="mobile">
+							<input type="radio" class="radio" name="type" value="1.5" />
+							<div class="title-lite">
+								Под ключ
+								<span class="note">+50% к стоимости</span>
+							</div>
+						</label>
+					</div>
+					<!-- // Мобильная адаптивность -->
+
+					<!-- Мобильная адаптивность -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Тип дома </label>
+						<label class="radio-wrapper">
+							<input type="radio" class="radio" name="building" value="1" checked />
+							<div class="title-lite">Новострой</div>
+						</label>
+						<label class="radio-wrapper">
+							<input type="radio" class="radio" name="building" value="1.1" />
+							<div class="title-lite">
+								Вторичка
+								<span class="note">+10% к стоимости</span>
+							</div>
+						</label>
+					</div>
+					<!-- // Мобильная адаптивность -->
+
+					<!-- Количество комнат -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Количество комнат </label>
+						<div class="rooms-wrapper">
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="0.8" />
+								<span class="rooms-radio-fake">C</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1" checked />
+								<span class="rooms-radio-fake">1</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1" />
+								<span class="rooms-radio-fake">2</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
+								<span class="rooms-radio-fake">3</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
+								<span class="rooms-radio-fake">4</span>
+							</label>
+
+							<label class="rooms-label">
+								<input class="rooms-radio-real" type="radio" name="rooms" value="1.05" />
+								<span class="rooms-radio-fake">5</span>
+							</label>
+						</div>
+					</div>
+					<!-- // Количество комнат -->
+
+					<!-- Дополнительные опции -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Дополнительные опции </label>
+						<label class="radio-wrapper">
+							<input type="checkbox" class="radio" name="ceiling" value="900" />
+							<div class="title-lite">
+								Натяжные потолки
+								<span class="note">900 руб. за м.кв.</span>
+							</div>
+						</label>
+						<label class="radio-wrapper">
+							<input type="checkbox" class="radio" name="walls" value="1.1" />
+							<div class="title-lite">
+								Покраска стен
+								<span class="note">+10% к стоимости</span>
+							</div>
+						</label>
+						<label class="radio-wrapper">
+							<input type="checkbox" class="radio" name="floor" value="1.1" />
+							<div class="title-lite">
+								Теплый пол
+								<span class="note">+10% к стоимости</span>
+							</div>
+						</label>
+					</div>
+					<!-- // Дополнительные опции -->
+					<!-- Стоимость ремонта -->
+					<div class="calc-price">
+						<div class="calc-price-title">Стоимость уборки:</div>
+						<div class="calc-price-value">
+							<span name="price" id="total-price">0</span>
+							рублей
+						</div>
+					</div>
+					<!-- // Стоимость ремонта -->
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Имя </label>
+						<input name="name" class="form-control" type="text" placeholder="Имя">
+					</div>
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Номер телефона </label>
+						<input name="tel" class="form-control" type="text" placeholder="Номер телефона">
+					</div>
+					<div class="calc-section">
+						<label class="checkbox-wrapper title-bold section-title"> Коментарий к заказу </label>
+						<textarea name="com" class="form-control" placeholder="Комментарий"></textarea>
+					</div>
+					<div class="btn_block">
+						<button type="submit" class="btn_zacaz">Сделать заказ</button>
+					</div>
+				</form>
+			</div>
+		</main>
 
 
 		<!-- Portfolio Start -->
@@ -256,7 +408,7 @@
 		<!-- Portfolio Start -->
 
 
-		
+
 		<!-- Footer Start -->
 		<div class="footer">
 			<div class="container">
@@ -311,17 +463,64 @@
 
 		<!------ chat button  ------->
 		<script>
-            (function(w,d,u){
-               var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
-               var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-            })(window,document,'https://cdn-ru.bitrix24.ru/b26485784/crm/site_button/loader_1_5rz1gh.js');
-      </script>
-	  <!------ chat button end ------->
+			(function (w, d, u) {
+				var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0);
+				var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+			})(window, document, 'https://cdn-ru.bitrix24.ru/b26485784/crm/site_button/loader_1_5rz1gh.js');
+		</script>
+		<!------ chat button end ------->
 
 
 		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 	</div>
+	<script type="text/javascript">
 
+		function sendEmail(data) {
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username: "profclinGet@outlook.com",
+				Password: "0739133EDC557CDDB133FE5308CB7799531F",
+				To: "profclinGet@gmail.com",
+				From: "profclinGet@outlook.com",
+				Subject: "Новый заказ с расчётом",
+				Body: data
+			}).then(
+				message => console.log(message)
+			);
+		}
+		function getFormValue(event) {
+			event.preventDefault();
+			const totalPriceElement = document.querySelector('#total-price');
+			const name = form.querySelector('[name="name"]'), //получаем поле name
+				tel = form.querySelector('[name="tel"]'), //получаем поле email
+				com = form.querySelector('[name="com"]'),
+				price = totalPriceElement.innerText,
+				ceiling = form.querySelector('[name="ceiling"]'),
+				walls = form.querySelector('[name="walls"]'),
+				floor = form.querySelector('[name="floor"]'),
+				rooms = form.querySelector('[name="rooms"]'),
+				building = form.querySelector('[name="building"]'),
+				kv_metr = form.querySelector('[name="kv_metr"]'),
+				type = form.querySelector('[name="type"]')
+			const data = {
+				name: name.value,
+				tel: tel.value,
+				com: com.value,
+				price: price,
+				ceiling: ceiling.value,
+				walls: walls.value,
+				floor: floor.value,
+				building: building.value,
+				kv_metr: kv_metr.value,
+				type: type.value
+			};
+			console.log(data);
+			sendEmail(data)
+			event.target.reset();
+		}
+		const form = document.getElementById('form');
+		form.addEventListener('submit', getFormValue);
+	</script>
 	<!-- JavaScript Libraries -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

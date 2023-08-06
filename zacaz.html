@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>Prof Clin</title>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="Cleaning Company Website Template" name="keywords">
+	<meta content="Cleaning Company Website Template" name="description">
+
+	<!-- Favicon -->
+	<link href="img/favicon.ico" rel="icon">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+
+	<!-- CSS Libraries -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+	<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+	<!-- Template Stylesheet -->
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!-- Header Start -->
+		<div class="header home">
+			<div class="container-fluid">
+				<div class="header-top row align-items-center">
+					<div class="col-lg-3">
+						<div class="brand">
+							<a href="index.html">
+								<!-- Prof Clin -->
+								<img src="img/Logo simb.svg" alt="Logo">
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-9">
+						<div class="topbar">
+							<div class="topbar-col">
+								<a href="tel:+7 999 999 99 99"><i class="fa fa-phone-alt"></i>+7 999 999 99 99</a>
+							</div>
+							<div class="topbar-col">
+								<a href="mailto:profclinGet@gmail.com"><i class="fa fa-envelope"></i>profclinGet@gmail.com</a>
+							</div>
+							<div class="topbar-col">
+								<div class="topbar-social">
+									<a href=""><i class="fab fa-telegram"></i></a>
+									<a href=""><i class="fab fa-vk"></i></a>
+									<a href="https://instagram.com/prof_clin_ing?igshid=MzRlODBiNWFlZA=="><i
+											class="fab fa-instagram"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="navbar navbar-expand-lg bg-light navbar-light">
+							<a href="#" class="navbar-brand">МЕНЮ</a>
+							<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+								<span class="navbar-toggler-icon"></span>
+							</button>
+							<div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+								<div class="navbar-nav ml-auto">
+									<a href="index.html" class="nav-item nav-link">Главная</a>
+									<a href="about.html" class="nav-item nav-link">О нас</a>
+									<a href="service.html" class="nav-item nav-link">Сервис</a>
+									<a href="portfolio.html" class="nav-item nav-link active">Заказ</a>
+									<a href="contact.html" class="nav-item nav-link ">Вопросы</a>
+									<a href="portfolio.html" class="btn">Расчитать стоимость</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="hero row align-items-center">
+					<div class="col-md-7">
+						<h2>Идеальная</h2>
+						<h2><span>Уборка</span> квартир, домов и офисов</h2>
+						<p>Узнайте стоимость вашей уборки</p>
+						<a class="btn" href="portfolio.html">Расчитать стоимость</a>
+					</div>
+					<div class="col-md-5">
+						<div class="form">
+							<h3>Сделать заказ</h3>
+							<form action="#" method="post" id="form">
+								<input name="name" class="form-control" type="text" placeholder="Имя">
+								<input name="tel" class="form-control" type="text" placeholder="Номер телефона">
+								<div class="control-group">
+									<select name="ubr" class="custom-select">
+										<option selected>Выберите акцию</option>
+										<option value="акция1">Уборка дома</option>
+										<option value="акция2">Уборка квартиры</option>
+										<option value="акция3">Уборка офиса</option>
+									</select>
+								</div>
+								<textarea name="com" class="form-control" placeholder="Комментарий"></textarea>
+								<button type="submit" class="btn btn-block">Сделать заказ</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Header End -->
+		<!------ chat button  ------->
+		<script>
+			(function (w, d, u) {
+				var s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0);
+				var h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h);
+			})(window, document, 'https://cdn-ru.bitrix24.ru/b26485784/crm/site_button/loader_1_5rz1gh.js');
+		</script>
+		<!------ chat button end ------->
+
+		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+	</div>
+
+	<!-- JavaScript Libraries -->
+	<script type="text/javascript">
+
+		function sendEmail(data) {
+			Email.send({
+				Host: "smtp.elasticemail.com",
+				Username: "profclinGet@outlook.com",
+				Password: "0739133EDC557CDDB133FE5308CB7799531F",
+				To: "profclinGet@gmail.com",
+				From: "profclinGet@outlook.com",
+				Subject: "Новый заказ",
+				Body: data
+			}).then(
+				message => console.log(message)
+			);
+		}
+		function getFormValue(event) {
+			event.preventDefault();
+			const name = form.querySelector('[name="name"]'), //получаем поле name
+				tel = form.querySelector('[name="tel"]'), //получаем поле email
+				com = form.querySelector('[name="com"]'),
+				ubr = form.querySelector('[name="ubr"]')
+			const data = {
+				name: name.value,
+				tel: tel.value,
+				com: com.value,
+				ubr: ubr.value
+			};
+			console.log(data);
+			sendEmail(data)
+			event.target.reset();
+		}
+		const form = document.getElementById('form');
+		form.addEventListener('submit', getFormValue);
+	</script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+	<script src="lib/isotope/isotope.pkgd.min.js"></script>
+	<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+	<!-- Template Javascript -->
+	<script src="js/main.js"></script>
+</body>
+
+</html>
