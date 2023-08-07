@@ -19,7 +19,6 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 	<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-	<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
 	<!-- Template Stylesheet -->
 	<link href="css/style.css" rel="stylesheet">
@@ -42,15 +41,14 @@
 					<div class="col-lg-9">
 						<div class="topbar">
 							<div class="topbar-col">
-								<a href="tel:+7 999 999 99 99"><i class="fa fa-phone-alt"></i>+7 999 999 99 99</a>
+								<a href="tel:+7 928 698-99-09"><i class="fa fa-phone-alt"></i>+7 928 698-99-09</a>
 							</div>
 							<div class="topbar-col">
 								<a href="mailto:profclinGet@gmail.com"><i class="fa fa-envelope"></i>profclinGet@gmail.com</a>
 							</div>
 							<div class="topbar-col">
 								<div class="topbar-social">
-									<a href=""><i class="fab fa-telegram"></i></a>
-									<a href=""><i class="fab fa-vk"></i></a>
+									<a href="https://vk.com/public211656807"><i class="fab fa-vk"></i></a>
 									<a href="https://instagram.com/prof_clin_ing?igshid=MzRlODBiNWFlZA=="><i
 											class="fab fa-instagram"></i></a>
 								</div>
@@ -90,9 +88,10 @@
 								<div class="control-group">
 									<select name="ubr" class="custom-select">
 										<option selected>Выберите вид уборки</option>
-										<option value="1">Уборка дома</option>
-										<option value="2">Уборка квартиры</option>
-										<option value="3">Уборка офиса</option>
+										<option value="Генеральная">Генеральная</option>
+										<option value="После ремонта">После ремонта</option>
+										<option value="Сложная">Сложная</option>
+										<option value="Поверхностная">Поверхностная</option>
 									</select>
 								</div>
 								<textarea name="com" class="form-control" placeholder="Комментарий"></textarea>
@@ -588,11 +587,10 @@
 						<div class="footer-contact">
 							<h2>Где нас найти</h2>
 							<p><i class="fa fa-map-marker-alt"></i>Республика Ингушетия, Россия</p>
-							<p><i class="fa fa-phone-alt"></i>+7 999 999 99 99</p>
+							<p><i class="fa fa-phone-alt"></i>+7 928 698-99-09</p>
 							<p><i class="fa fa-envelope"></i>profclinGet@gmail.com</p>
 							<div class="footer-social">
-								<a href=""><i class="fab fa-telegram"></i></a>
-								<a href=""><i class="fab fa-vk"></i></a>
+								<a href="https://vk.com/public211656807"><i class="fab fa-vk"></i></a>
 								<a href="https://instagram.com/prof_clin_ing?igshid=MzRlODBiNWFlZA=="><i
 										class="fab fa-instagram"></i></a>
 							</div>
@@ -654,7 +652,7 @@
 				Password: "0739133EDC557CDDB133FE5308CB7799531F",
 				To: "profclinGet@gmail.com",
 				From: "profclinGet@outlook.com",
-				Subject: "Новый заказ",
+				Subject: "Новый заказ - Сокращённый",
 				Body: data
 			}).then(
 				message => console.log(message)
@@ -667,10 +665,10 @@
 				com = form.querySelector('[name="com"]'),
 				ubr = form.querySelector('[name="ubr"]')
 			const data = {
-				name: name.value,
-				tel: tel.value,
-				com: com.value,
-				ubr: ubr.value
+				"Имя": name.value,
+				"Номер телефона": tel.value,
+				"Комментарий": com.value,
+				"Тип уборки": ubr.value
 			};
 			console.log(data);
 			sendEmail(data)
@@ -682,8 +680,6 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 	<script src="lib/easing/easing.min.js"></script>
 	<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-	<script src="lib/isotope/isotope.pkgd.min.js"></script>
-	<script src="lib/lightbox/js/lightbox.min.js"></script>
 
 	<!-- Template Javascript -->
 	<script src="js/main.js"></script>

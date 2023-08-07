@@ -25,24 +25,6 @@
 	});
 
 
-	// Dropdown on mouse hover
-	$(document).ready(function () {
-		function toggleNavbarMethod() {
-			if ($(window).width() > 992) {
-				$('.navbar .dropdown').on('mouseover', function () {
-					$('.dropdown-toggle', this).trigger('click');
-				}).on('mouseout', function () {
-					$('.dropdown-toggle', this).trigger('click').blur();
-				});
-			} else {
-				$('.navbar .dropdown').off('mouseover').off('mouseout');
-			}
-		}
-		toggleNavbarMethod();
-		$(window).resize(toggleNavbarMethod);
-	});
-
-
 	// Testimonials carousel
 	$(".testimonials-carousel").owlCarousel({
 		autoplay: true,
@@ -64,20 +46,6 @@
 		}
 	});
 
-
-	// Portfolio isotope and filter
-	var portfolioIsotope = $('.portfolio-container').isotope({
-		itemSelector: '.portfolio-item',
-		layoutMode: 'fitRows'
-	});
-
-	$('#portfolio-flters li').on('click', function () {
-		$("#portfolio-flters li").removeClass('filter-active');
-		$(this).addClass('filter-active');
-
-		portfolioIsotope.isotope({ filter: $(this).data('filter') });
-	});
-
 })(jQuery);
 
 // КАЛЬКУЛЯТОР ЗАКАЗА
@@ -95,8 +63,6 @@ const vannie_kol = document.querySelectorAll('input[name="vannie_kol"]');
 // Чекбоксы
 const vannie = document.querySelector('input[name="vannie"]');
 const kuhni = document.querySelector('input[name="kuhni"]');
-
-const ceilings = document.querySelector('input[name="ceiling"]');
 
 const totalPriceElement = document.querySelector('#total-price');
 
@@ -120,13 +86,21 @@ function calculate() {
 			if (radio.value != 90) {
 				vannie.disabled = true;
 				kuhni.disabled = true;
-				kuhni_kol.disabled = true;
-				vannie_kol.disabled = true;
+				for (const radio of kuhni_kol) {
+					radio.disabled = true;
+				}
+				for (const radio of vannie_kol) {
+					radio.disabled = true;
+				}
 			} else {
 				vannie.disabled = false;
 				kuhni.disabled = false;
-				kuhni_kol.disabled = false;
-				vannie_kol.disabled = false;
+				for (const radio of kuhni_kol) {
+					radio.disabled = false;
+				}
+				for (const radio of vannie_kol) {
+					radio.disabled = false;
+				}
 			}
 		}
 	}
@@ -150,9 +124,6 @@ function calculate() {
 	if (win_input.value > 0) {
 		totalPrice = totalPrice + win_input.value * 300
 	}
-	// if (floor.checked) {
-	// 	totalPrice = totalPrice * parseFloat(floor.value); // ---
-	// }
 
 	const formatter = new Intl.NumberFormat('ru');
 	totalPriceElement.innerText = formatter.format(totalPrice);
