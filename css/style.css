@@ -1223,7 +1223,9 @@ a:focus {
 	color: #000000;
 	background: #FFD662;
 }
-
+.blog .blog-item .pdl {
+	padding-left: 10%;
+}
 
 /*******************************/
 /******* Call to Action ********/
