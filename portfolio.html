@@ -10,7 +10,7 @@
 	<meta content="Cleaning Company Website Template" name="description">
 
 	<!-- Favicon -->
-	<link href="img/favicon.ico" rel="icon">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
@@ -311,8 +311,8 @@
 	</div>
 	<script type="text/javascript">
 
-		function sendEmail(data) {
-			Email.send({
+		async function sendEmail(data) {
+			await Email.send({
 				Host: "smtp.elasticemail.com",
 				Username: "profclinGet@outlook.com",
 				Password: "0739133EDC557CDDB133FE5308CB7799531F",
@@ -321,7 +321,12 @@
 				Subject: "Новый заказ с расчётом",
 				Body: data
 			}).then(
-				message => console.log(message)
+				message => {
+					console.log(message);
+					if (message == "OK") {
+						location.reload();
+					}
+				}
 			);
 		}
 		function getFormValue(event) {
@@ -390,19 +395,7 @@
 			};
 			console.log(data);
 			sendEmail(data);
-			const actionWithDelay = async () => {
-				await delay(2000);
-				console.log("Отправка");
-			}
-			actionWithDelay()
-			// setTimeout(codingCourse, 1000);
-			// // определение функции
-			// function codingCourse() {
-			// 	console.log("Отправка");
-			// }
-
-			// event.target.reset();
-			location.reload();
+			event.target.reset();
 		}
 		const form = document.getElementById('form');
 		form.addEventListener('submit', getFormValue);
