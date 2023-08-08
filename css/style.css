@@ -239,12 +239,12 @@ a:focus {
 	border: none;
 	border-radius: 5px;
 	letter-spacing: 1px;
-	background: #ffffff;
+	background: #FFD662;
 	transition: .3s;
 }
 
 .header .navbar .btn:hover {
-	background: #FFD662;
+	background: #fff;
 	color: #000000;
 }
 
@@ -1222,6 +1222,10 @@ a:focus {
 .blog .blog-item a.btn:hover {
 	color: #000000;
 	background: #FFD662;
+}
+
+.blog .blog-item .pdl {
+	padding-left: 10%;
 }
 
 
