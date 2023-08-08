@@ -60,10 +60,6 @@ const radioType = document.querySelectorAll('input[name="type"]');
 const kuhni_kol = document.querySelectorAll('input[name="kuhni_kol"]');
 const vannie_kol = document.querySelectorAll('input[name="vannie_kol"]');
 
-// Чекбоксы
-const vannie = document.querySelector('input[name="vannie"]');
-const kuhni = document.querySelector('input[name="kuhni"]');
-
 const totalPriceElement = document.querySelector('#total-price');
 
 // Связка range c тектовым полем
@@ -84,17 +80,17 @@ function calculate() {
 		if (radio.checked) {
 			totalPrice = parseInt(squareInput.value) * parseFloat(radio.value); // 300 000 * 1.2
 			if (radio.value != 90) {
-				vannie.disabled = true;
-				kuhni.disabled = true;
+
 				for (const radio of kuhni_kol) {
 					radio.disabled = true;
+					radio.checked = false;
 				}
 				for (const radio of vannie_kol) {
 					radio.disabled = true;
+					radio.checked = false;
 				}
 			} else {
-				vannie.disabled = false;
-				kuhni.disabled = false;
+
 				for (const radio of kuhni_kol) {
 					radio.disabled = false;
 				}
@@ -105,19 +101,14 @@ function calculate() {
 		}
 	}
 
-	if (vannie.checked) {
-		for (const radio of vannie_kol) {
-			if (radio.checked) {
-				totalPrice = totalPrice + 2900 * parseFloat(radio.value);
-			}
+	for (const radio of vannie_kol) {
+		if (radio.checked) {
+			totalPrice = totalPrice + 2900 * parseFloat(radio.value);
 		}
 	}
-
-	if (kuhni.checked) {
-		for (const radio of kuhni_kol) {
-			if (radio.checked) {
-				totalPrice = totalPrice + 4900 * parseFloat(radio.value);
-			}
+	for (const radio of kuhni_kol) {
+		if (radio.checked) {
+			totalPrice = totalPrice + 4900 * parseFloat(radio.value);
 		}
 	}
 
